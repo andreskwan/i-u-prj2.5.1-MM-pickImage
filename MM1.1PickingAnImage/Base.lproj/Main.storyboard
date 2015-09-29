@@ -23,7 +23,11 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TVX-1z-Elh"/>
-                                    <barButtonItem title="Cam" id="ouI-si-q5Q"/>
+                                    <barButtonItem title="Cam" id="ouI-si-q5Q">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="SNj-I6-4qY"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VkH-l1-O75"/>
                                     <barButtonItem title="Album" id="BRh-bp-LSd">
                                         <connections>
@@ -46,6 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="ouI-si-q5Q" id="qvH-oK-Fhj"/>
                         <outlet property="imagePickerView" destination="g8O-vn-Zsu" id="Hhl-yd-mCp"/>
                     </connections>
                 </viewController>
