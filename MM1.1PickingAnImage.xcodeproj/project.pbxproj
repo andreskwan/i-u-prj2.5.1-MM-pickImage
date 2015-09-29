@@ -156,6 +156,7 @@
 		EADD5CD01BBA0D9400DAE977 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Kwan;
 				TargetAttributes = {
@@ -411,6 +412,7 @@
 				EADD5CF91BBA0D9500DAE977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EADD5CFA1BBA0D9500DAE977 /* Build configuration list for PBXNativeTarget "MM1.1PickingAnImageTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +421,7 @@
 				EADD5CFC1BBA0D9500DAE977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
