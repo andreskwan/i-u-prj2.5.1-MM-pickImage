@@ -14,17 +14,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextfield: UITextField!
+
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSStrokeWidthAttributeName: -3.0,
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         topTextField.text = "TOP"
+        topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = NSTextAlignment.Center
         topTextField.delegate = self
         
         bottomTextfield.text = "BOTTOM"
+        bottomTextfield.defaultTextAttributes = memeTextAttributes
         bottomTextfield.textAlignment = NSTextAlignment.Center
         bottomTextfield.delegate = self
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
