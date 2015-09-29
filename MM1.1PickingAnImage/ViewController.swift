@@ -8,27 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        topTextField.text = "TOP"
+        topTextField.textAlignment = NSTextAlignment.Center
+        topTextField.delegate = self
+        
+        bottomTextfield.text = "BOTTOM"
+        bottomTextfield.textAlignment = NSTextAlignment.Center
+        bottomTextfield.delegate = self
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
+    // MARK: IBActions
     @IBAction func pickAnImage(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
-    //UIImagePickerControllerOriginalImage
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    // MARK: UIImagePickerControllerDelegate - methods
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -37,11 +54,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+    // MARK: UITextFieldDelegate - Methods
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true;
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.text = ""
     }
 }
 
