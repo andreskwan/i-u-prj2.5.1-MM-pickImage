@@ -14,7 +14,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextfield: UITextField!
-
+    
+    var keyBoardHeight: CGFloat!
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
         NSStrokeWidthAttributeName: -3.0,
@@ -38,8 +40,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        self.subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.unsubscribeFromKeyBoardNotifications() 
+    }
+    
     // MARK: IBActions
     @IBAction func pickAnImage(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -53,6 +61,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
+    
     // MARK: UIImagePickerControllerDelegate - methods
 //    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -64,6 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
     // MARK: UITextFieldDelegate - Methods
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -83,5 +93,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
-}
 
+    // MARK: Keyboard
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    func unsubscribeFromKeyBoardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:UIKeyboardWillHideNotification, object: nil)
+    }
+    func keyboardWillShow(notification: NSNotification) {
+        if bottomTextfield.isFirstResponder() {
+            keyBoardHeight = getKeyboardHeight(notification)
+            if keyBoardHeight != 0 {
+                self.animateTextField(true)
+            }
+        }
+    }
+    func animateTextField(up: Bool) {
+        let movement = (up ? -keyBoardHeight : keyBoardHeight)
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        })
+    }
+    func keyboardWillHide(notification: NSNotification) {
+        if bottomTextfield.isFirstResponder() {
+            self.animateTextField(false)
+        }
+    }
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
+                return keyboardSize.height
+            }
+        }
+        return 0
+    }
+}
