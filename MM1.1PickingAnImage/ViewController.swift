@@ -73,5 +73,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
+    func textFieldDidEndEditing(textField: UITextField) {
+        if (textField.text?.isEmpty == true) {
+            if textField == topTextField {
+                topTextField.text = "TOP"
+            }
+            else {
+                bottomTextfield.text = "BOTTOM"
+            }
+        }
+    }
 }
 
