@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8O-vn-Zsu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCd-B3-NcP">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TVX-1z-Elh"/>
-                                    <barButtonItem title="Cam" id="ouI-si-q5Q">
+                                    <barButtonItem systemItem="camera" id="ouI-si-q5Q">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="SNj-I6-4qY"/>
                                         </connections>
@@ -38,41 +39,52 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iSi-6x-ufo"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-by-X4f">
-                                <rect key="frame" x="16" y="28" width="568" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="xOR-OI-g8r"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5d-sy-NLF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="6jp-iR-Rw0"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zae-fW-1CG"/>
+                                    <barButtonItem systemItem="cancel" id="nUB-gs-UNe"/>
+                                </items>
+                            </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8u-li-i5F">
                                 <rect key="frame" x="16" y="480" width="568" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="kbv-YV-rKK"/>
+                                    <constraint firstAttribute="height" constant="60" id="aZR-rA-h3E"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-by-X4f">
+                                <rect key="frame" x="16" y="60" width="568" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="v4h-i6-H5Z"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="58m-Jx-bP6"/>
-                            <constraint firstItem="MMb-by-X4f" firstAttribute="leading" secondItem="g8O-vn-Zsu" secondAttribute="trailing" constant="-584" id="C2G-gC-WbV"/>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="bottom" secondItem="fCd-B3-NcP" secondAttribute="top" id="HZg-dO-mKu"/>
-                            <constraint firstItem="MMb-by-X4f" firstAttribute="centerX" secondItem="g8O-vn-Zsu" secondAttribute="centerX" id="KFR-1B-nEH"/>
-                            <constraint firstItem="C8u-li-i5F" firstAttribute="centerX" secondItem="g8O-vn-Zsu" secondAttribute="centerX" id="PIN-ih-GgA"/>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="MMb-by-X4f" secondAttribute="bottom" constant="-88" id="WXy-LN-2EC"/>
-                            <constraint firstAttribute="trailing" secondItem="fCd-B3-NcP" secondAttribute="trailing" id="ZfG-Li-SVi"/>
-                            <constraint firstItem="fCd-B3-NcP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dCm-8g-qpV"/>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="leading" secondItem="fCd-B3-NcP" secondAttribute="leading" id="fch-xK-Svp"/>
-                            <constraint firstItem="fCd-B3-NcP" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="mPg-R7-LGf"/>
-                            <constraint firstItem="C8u-li-i5F" firstAttribute="top" secondItem="g8O-vn-Zsu" secondAttribute="bottom" constant="-76" id="um0-vz-bEI"/>
-                            <constraint firstItem="C8u-li-i5F" firstAttribute="leading" secondItem="g8O-vn-Zsu" secondAttribute="trailing" constant="-584" id="yXY-d1-ThQ"/>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="trailing" secondItem="fCd-B3-NcP" secondAttribute="trailing" id="zoa-cs-eFl"/>
+                            <constraint firstItem="fCd-B3-NcP" firstAttribute="centerX" secondItem="C8u-li-i5F" secondAttribute="centerX" id="00h-DI-1wP"/>
+                            <constraint firstItem="fCd-B3-NcP" firstAttribute="top" secondItem="C8u-li-i5F" secondAttribute="bottom" constant="16" id="ELF-Ct-4Ts"/>
+                            <constraint firstItem="MMb-by-X4f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="FMb-JK-s3Z"/>
+                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="f5d-sy-NLF" secondAttribute="bottom" id="MR3-HL-vGm"/>
+                            <constraint firstItem="fCd-B3-NcP" firstAttribute="leading" secondItem="g8O-vn-Zsu" secondAttribute="leading" id="W4v-0H-TbE"/>
+                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="leading" secondItem="f5d-sy-NLF" secondAttribute="leading" id="XGE-Z5-BjD"/>
+                            <constraint firstItem="MMb-by-X4f" firstAttribute="top" secondItem="f5d-sy-NLF" secondAttribute="bottom" constant="16" id="aLM-MQ-KtH"/>
+                            <constraint firstItem="f5d-sy-NLF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fZt-el-nep"/>
+                            <constraint firstItem="fCd-B3-NcP" firstAttribute="trailing" secondItem="g8O-vn-Zsu" secondAttribute="trailing" id="gXJ-fo-ooE"/>
+                            <constraint firstItem="fCd-B3-NcP" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="hA1-K5-Keu"/>
+                            <constraint firstAttribute="trailing" secondItem="f5d-sy-NLF" secondAttribute="trailing" id="iFp-7j-pnK"/>
+                            <constraint firstItem="f5d-sy-NLF" firstAttribute="trailing" secondItem="g8O-vn-Zsu" secondAttribute="trailing" id="inu-sl-l24"/>
+                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mye-yc-vOk"/>
+                            <constraint firstItem="MMb-by-X4f" firstAttribute="leading" secondItem="C8u-li-i5F" secondAttribute="leading" id="n72-Bb-uxZ"/>
+                            <constraint firstItem="fCd-B3-NcP" firstAttribute="top" secondItem="g8O-vn-Zsu" secondAttribute="bottom" id="vSL-jB-QFk"/>
+                            <constraint firstItem="C8u-li-i5F" firstAttribute="trailing" secondItem="MMb-by-X4f" secondAttribute="trailing" id="yQt-Kv-8zQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -84,6 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="423" y="410"/>
         </scene>
     </scenes>
 </document>

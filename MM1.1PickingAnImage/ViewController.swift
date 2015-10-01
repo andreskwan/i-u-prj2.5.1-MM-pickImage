@@ -29,11 +29,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         topTextField.textAlignment = NSTextAlignment.Center
         topTextField.delegate = self
         
         bottomTextfield.text = "BOTTOM"
         bottomTextfield.defaultTextAttributes = memeTextAttributes
+        bottomTextfield.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         bottomTextfield.textAlignment = NSTextAlignment.Center
         bottomTextfield.delegate = self
         
@@ -46,6 +48,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
         self.unsubscribeFromKeyBoardNotifications() 
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     // MARK: IBActions
