@@ -130,4 +130,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         return 0
     }
+    
+    // MARK: Meme Model
+    func save() {
+        let memedImage = generateMemedImage()
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
+    }
+    func generateMemedImage() ->UIImage {
+        //1 render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return memedImage
+    }
+    
 }
