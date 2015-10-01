@@ -44,6 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(true)
         self.subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        self.navigationController?.setToolbarHidden(false, animated: false)
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
