@@ -138,9 +138,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // MARK: Meme Model
-    func save() {
+    func save() -> Meme {
         let memedImage = generateMemedImage()
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
+        return Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
     }
     func generateMemedImage() ->UIImage {
         //1 render view to an image
@@ -150,5 +150,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         return memedImage
     }
+    
+    // MARK:
+    @IBAction func displayActivityVC(sender: UIBarButtonItem) {
+        let meme = save()
+        let activityVC = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
+        self.presentViewController(activityVC, animated: true, completion: nil)
+    }
+    
     
 }
