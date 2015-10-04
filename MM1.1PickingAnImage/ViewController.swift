@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate{
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -19,9 +19,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var subviewBottomConstrain: NSLayoutConstraint!
     @IBOutlet weak var topTextFieldConstrain: NSLayoutConstraint!
     @IBOutlet weak var bottomTextFieldConstrain: NSLayoutConstraint!
+    @IBOutlet weak var actionButton: UIBarButtonItem!
     
     var keyBoardHeight: CGFloat!
-    var shouldShowBars: Bool!
+    var shouldHideBars: Bool!
+    var memedImage: UIImage!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
@@ -32,14 +34,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let tap:UITapGestureRecognizer! = UITapGestureRecognizer(target: self, action: Selector("chromeToggle"))
-//        tap.numberOfTapsRequired = 1
-//        tap.delegate = self
-//        self.view.addGestureRecognizer(tap)
+        initializeMeme()
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.subscribeToKeyboardNotifications()
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.unsubscribeFromKeyBoardNotifications() 
+    }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    func initializeMeme(){
+        shouldHideBars = false
+        toggleBars()
         
-        shouldShowBars = true
-            
         topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
@@ -52,43 +64,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextfield.textAlignment = NSTextAlignment.Center
         bottomTextfield.delegate = self
         
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        self.subscribeToKeyboardNotifications()
-        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        self.navigationController?.setToolbarHidden(false, animated: false)
-        if (UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
-            topTextFieldConstrain.constant = 10
-            bottomTextFieldConstrain.constant = 10
-        }
-    }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(true)
-        self.unsubscribeFromKeyBoardNotifications() 
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+        actionButton.enabled = false
+        imagePickerView.image = nil
     }
     
     // MARK: IBActions
-    @IBAction func pickAnImage(sender: AnyObject) {
+    @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
+        initializeMeme()
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
+        initializeMeme()
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
+    @IBAction func cancelButton(sender: AnyObject) {
+        initializeMeme()
+    }
+    @IBAction func displayActivityVC(sender: UIBarButtonItem) {
+        generateMemedImage()
+        let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityVC.completionWithItemsHandler = { (activity, success, items, error) in
+            self.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        self.presentViewController(activityVC, animated: true, completion: nil)
+    }
     
     // MARK: UIImagePickerControllerDelegate - methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            actionButton.enabled = true
             self.imagePickerView.image = image
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -134,12 +145,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
-    func animateTextField(up: Bool) {
-        let movement = (up ? -keyBoardHeight : keyBoardHeight)
-        UIView.animateWithDuration(0.3, animations: {
-            self.view.frame = CGRectOffset(self.view.frame, 0, movement)
-        })
-    }
     func keyboardWillHide(notification: NSNotification) {
         if bottomTextfield.isFirstResponder() {
             self.animateTextField(false)
@@ -153,38 +158,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         return 0
     }
+    func animateTextField(up: Bool) {
+        let movement = (up ? -keyBoardHeight : keyBoardHeight)
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        })
+    }
     
     // MARK: Meme Model
     func save() -> Meme {
-        let memedImage = generateMemedImage()
         return Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
     }
-    func generateMemedImage() ->UIImage {
+    func generateMemedImage() {
         toggleBars()
         UIGraphicsBeginImageContext(self.subView.frame.size)
         self.view.drawViewHierarchyInRect(self.subView.frame, afterScreenUpdates: true)
-        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         toggleBars()
-        return memedImage
-    }
-    
-    // MARK: ActivityViewController
-    @IBAction func displayActivityVC(sender: UIBarButtonItem) {
-        let meme = save()
-        let activityVC = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
-        self.presentViewController(activityVC, animated: true, completion: nil)
     }
     
     // MARK: Tap Gesture
     func toggleBars()
     {
-        self.navigationController?.setNavigationBarHidden(shouldShowBars, animated: false)
-        self.navigationController?.setToolbarHidden(shouldShowBars, animated: false)
-        if shouldShowBars != false{
+        self.navigationController?.setNavigationBarHidden(shouldHideBars, animated: false)
+        self.navigationController?.setToolbarHidden(shouldHideBars, animated: false)
+        if shouldHideBars != false{
             subviewTopConstrain.constant = 0
             subviewBottomConstrain.constant = 0
         }
-        shouldShowBars = !shouldShowBars
+        shouldHideBars = !shouldHideBars
     }
 }
