@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B1A5B1BBCDAA700135040 /* Meme.swift */; settings = {ASSET_TAGS = (); }; };
 		EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CDD1BBA0D9400DAE977 /* AppDelegate.swift */; };
 		EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */; };
 		EADD5CE31BBA0D9400DAE977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADD5CE11BBA0D9400DAE977 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA6B1A5B1BBCDAA700135040 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meme.swift; path = MM1.1PickingAnImage/Meme.swift; sourceTree = "<group>"; };
 		EADD5CD81BBA0D9400DAE977 /* MM1.1PickingAnImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MM1.1PickingAnImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADD5CDC1BBA0D9400DAE977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADD5CDD1BBA0D9400DAE977 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		EADD5CCF1BBA0D9400DAE977 = {
 			isa = PBXGroup;
 			children = (
+				EA6B1A5B1BBCDAA700135040 /* Meme.swift */,
 				EADD5CDA1BBA0D9400DAE977 /* MM1.1PickingAnImage */,
 				EADD5CF01BBA0D9500DAE977 /* MM1.1PickingAnImageTests */,
 				EADD5CD91BBA0D9400DAE977 /* Products */,
@@ -77,12 +80,11 @@
 		EADD5CDA1BBA0D9400DAE977 /* MM1.1PickingAnImage */ = {
 			isa = PBXGroup;
 			children = (
-				EADD5CDD1BBA0D9400DAE977 /* AppDelegate.swift */,
 				EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */,
 				EADD5CE11BBA0D9400DAE977 /* Main.storyboard */,
+				EADD5CDB1BBA0D9400DAE977 /* Supporting Files */,
 				EADD5CE41BBA0D9400DAE977 /* Images.xcassets */,
 				EADD5CE61BBA0D9400DAE977 /* LaunchScreen.xib */,
-				EADD5CDB1BBA0D9400DAE977 /* Supporting Files */,
 			);
 			path = MM1.1PickingAnImage;
 			sourceTree = "<group>";
@@ -90,6 +92,7 @@
 		EADD5CDB1BBA0D9400DAE977 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EADD5CDD1BBA0D9400DAE977 /* AppDelegate.swift */,
 				EADD5CDC1BBA0D9400DAE977 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -156,6 +159,7 @@
 		EADD5CD01BBA0D9400DAE977 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Kwan;
 				TargetAttributes = {
@@ -212,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */,
 				EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */,
 				EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */,
 			);
@@ -291,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -330,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,6 +416,7 @@
 				EADD5CF91BBA0D9500DAE977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EADD5CFA1BBA0D9500DAE977 /* Build configuration list for PBXNativeTarget "MM1.1PickingAnImageTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +425,7 @@
 				EADD5CFC1BBA0D9500DAE977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
