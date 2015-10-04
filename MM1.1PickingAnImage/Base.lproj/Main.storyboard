@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jwf-4v-uyK">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,46 +17,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8O-vn-Zsu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0m-C2-DpZ" userLabel="SubView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8O-vn-Zsu">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="600" id="kxs-Lq-fWi"/>
+                                            <constraint firstAttribute="height" constant="492" id="xyc-IP-Goa"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kxs-Lq-fWi"/>
+                                                <exclude reference="xyc-IP-Goa"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-by-X4f">
+                                        <rect key="frame" x="16" y="20" width="568" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8u-li-i5F">
+                                        <rect key="frame" x="16" y="372" width="568" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="kxs-Lq-fWi"/>
-                                    <constraint firstAttribute="height" constant="492" id="xyc-IP-Goa"/>
+                                    <constraint firstItem="MMb-by-X4f" firstAttribute="top" secondItem="w0m-C2-DpZ" secondAttribute="top" constant="20" id="6uy-NA-nRG"/>
+                                    <constraint firstItem="g8O-vn-Zsu" firstAttribute="leading" secondItem="w0m-C2-DpZ" secondAttribute="leading" id="J76-l9-gxf"/>
+                                    <constraint firstAttribute="trailing" secondItem="C8u-li-i5F" secondAttribute="trailing" constant="16" id="Lmf-2c-F6V"/>
+                                    <constraint firstAttribute="bottom" secondItem="C8u-li-i5F" secondAttribute="bottom" constant="20" id="NmB-t8-dnI"/>
+                                    <constraint firstAttribute="trailing" secondItem="MMb-by-X4f" secondAttribute="trailing" constant="16" id="PBh-Fm-uBH"/>
+                                    <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="MMb-by-X4f" secondAttribute="bottom" constant="-120" id="QRu-wT-tD8"/>
+                                    <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="w0m-C2-DpZ" secondAttribute="top" id="XlK-82-vxB"/>
+                                    <constraint firstItem="MMb-by-X4f" firstAttribute="leading" secondItem="w0m-C2-DpZ" secondAttribute="leading" constant="16" id="YSb-WL-GCk"/>
+                                    <constraint firstItem="C8u-li-i5F" firstAttribute="leading" secondItem="w0m-C2-DpZ" secondAttribute="leading" constant="16" id="Ymg-U7-fvP"/>
+                                    <constraint firstAttribute="trailing" secondItem="g8O-vn-Zsu" secondAttribute="trailing" id="Yn6-MX-MrZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="g8O-vn-Zsu" secondAttribute="bottom" id="ak5-bh-kVz"/>
+                                    <constraint firstItem="C8u-li-i5F" firstAttribute="top" relation="lessThanOrEqual" secondItem="MMb-by-X4f" secondAttribute="bottom" constant="346" id="ejK-RN-VBX"/>
+                                    <constraint firstItem="C8u-li-i5F" firstAttribute="top" secondItem="g8O-vn-Zsu" secondAttribute="bottom" constant="-120" id="k5V-1x-hFz"/>
                                 </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8u-li-i5F">
-                                <rect key="frame" x="16" y="480" width="568" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="aZR-rA-h3E"/>
-                                    <constraint firstAttribute="width" constant="568" id="rNo-Y0-hgz"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-by-X4f">
-                                <rect key="frame" x="16" y="85" width="568" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="568" id="buo-44-uI9"/>
-                                    <constraint firstAttribute="height" constant="60" id="v4h-i6-H5Z"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ejK-RN-VBX"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0cl-eM-LgP"/>
-                            <constraint firstItem="MMb-by-X4f" firstAttribute="centerX" secondItem="g8O-vn-Zsu" secondAttribute="centerX" id="1mL-UI-BHt"/>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="MMb-by-X4f" secondAttribute="bottom" constant="-81" id="7rj-h5-8bc"/>
-                            <constraint firstItem="C8u-li-i5F" firstAttribute="centerX" secondItem="MMb-by-X4f" secondAttribute="centerX" id="SSh-as-MJO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g8O-vn-Zsu" secondAttribute="bottom" id="X5v-3u-yom"/>
-                            <constraint firstItem="MMb-by-X4f" firstAttribute="leading" secondItem="C8u-li-i5F" secondAttribute="leading" id="n72-Bb-uxZ"/>
-                            <constraint firstItem="g8O-vn-Zsu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pXF-bu-mjs"/>
-                            <constraint firstItem="C8u-li-i5F" firstAttribute="top" secondItem="MMb-by-X4f" secondAttribute="bottom" constant="335" id="uQS-bp-Vek"/>
-                            <constraint firstItem="C8u-li-i5F" firstAttribute="trailing" secondItem="MMb-by-X4f" secondAttribute="trailing" id="yQt-Kv-8zQ"/>
+                            <constraint firstItem="w0m-C2-DpZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1w2-at-E1W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w0m-C2-DpZ" secondAttribute="bottom" id="743-sr-9Jm"/>
+                            <constraint firstItem="w0m-C2-DpZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="n8L-Ra-3NQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w0m-C2-DpZ" secondAttribute="trailing" constant="-20" id="vSo-td-E5A"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -84,10 +103,15 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomTextFieldConstrain" destination="NmB-t8-dnI" id="PTh-48-1QX"/>
                         <outlet property="bottomTextfield" destination="C8u-li-i5F" id="AEm-7I-LLV"/>
                         <outlet property="cameraButton" destination="Mow-Sb-69p" id="8PM-Ku-l7Q"/>
                         <outlet property="imagePickerView" destination="g8O-vn-Zsu" id="Hhl-yd-mCp"/>
+                        <outlet property="subView" destination="w0m-C2-DpZ" id="IDl-pj-LQq"/>
+                        <outlet property="subviewBottomConstrain" destination="743-sr-9Jm" id="hbw-pW-OVo"/>
+                        <outlet property="subviewTopConstrain" destination="n8L-Ra-3NQ" id="nmZ-94-4xx"/>
                         <outlet property="topTextField" destination="MMb-by-X4f" id="Fxd-in-cyP"/>
+                        <outlet property="topTextFieldConstrain" destination="6uy-NA-nRG" id="IOE-bp-SoH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,7 +134,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCb-K4-vch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="410"/>
+            <point key="canvasLocation" x="544" y="410"/>
         </scene>
     </scenes>
 </document>
