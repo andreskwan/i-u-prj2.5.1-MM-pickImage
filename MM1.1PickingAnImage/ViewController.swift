@@ -38,12 +38,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
-        self.unsubscribeFromKeyBoardNotifications() 
+        unsubscribeFromKeyBoardNotifications() 
     }
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -74,14 +74,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
         initializeMeme()
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func cancelButton(sender: AnyObject) {
         initializeMeme()
@@ -93,19 +93,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.save()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        self.presentViewController(activityVC, animated: true, completion: nil)
+        presentViewController(activityVC, animated: true, completion: nil)
     }
     
     // MARK: UIImagePickerControllerDelegate - methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             actionButton.enabled = true
-            self.imagePickerView.image = image
-            self.dismissViewControllerAnimated(true, completion: nil)
+            imagePickerView.image = image
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     // MARK: UITextFieldDelegate - Methods
@@ -141,13 +141,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if bottomTextfield.isFirstResponder() {
             keyBoardHeight = getKeyboardHeight(notification)
             if keyBoardHeight != 0 {
-                self.animateTextField(true)
+                animateTextField(true)
             }
         }
     }
     func keyboardWillHide(notification: NSNotification) {
         if bottomTextfield.isFirstResponder() {
-            self.animateTextField(false)
+            animateTextField(false)
         }
     }
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
