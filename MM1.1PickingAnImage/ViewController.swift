@@ -146,7 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     func keyboardWillHide(notification: NSNotification) {
-        if bottomTextfield.isFirstResponder() {
+        if bottomTextfield.isFirstResponder() && keyBoardHeight != nil {
             animateTextField(false)
         }
     }
