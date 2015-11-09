@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import imglyKit;
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
@@ -78,10 +79,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
         initializeMeme()
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        let cameraViewController = IMGLYCameraViewController(recordingModes: [.Photo, .Video])
+        presentViewController(cameraViewController, animated: true, completion: nil)
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.delegate = self
+//        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+//        presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func cancelButton(sender: AnyObject) {
         initializeMeme()
