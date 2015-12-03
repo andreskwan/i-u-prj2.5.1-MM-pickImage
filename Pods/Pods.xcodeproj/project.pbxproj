@@ -231,7 +231,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1130F5E35579EF30FE18F8C6A6329EEC /* PBXContainerItemProxy */ = {
+		6546680B5BDBB1D50C1CA03F5F0F3D2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -258,6 +258,7 @@
 		0BEE95C741902B66D29B341B85223779 /* ValenciaRegular.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = ValenciaRegular.otf; path = imglyKit/Backend/Fonts/ValenciaRegular.otf; sourceTree = "<group>"; };
 		115EFA51BAF90ECE2F601106C9DEFBFC /* AD1920.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AD1920.png; path = "imglyKit/Backend/Filter Responses/AD1920.png"; sourceTree = "<group>"; };
 		116A36BB1828237A6F65DD549410CB21 /* IMGLYOrientationEditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYOrientationEditorViewController.swift; path = imglyKit/Frontend/Editor/IMGLYOrientationEditorViewController.swift; sourceTree = "<group>"; };
+		1251D564D635CB4F49368091BE546983 /* imglyKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "imglyKit-Private.xcconfig"; sourceTree = "<group>"; };
 		1A334DC41665BC8F23DD166F92891806 /* IMGLYCropRectComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYCropRectComponent.swift; path = imglyKit/Frontend/Editor/IMGLYCropRectComponent.swift; sourceTree = "<group>"; };
 		1A88ED7572C8DD48CD9E5D48BDAA9913 /* IMGLYNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYNavigationController.swift; path = imglyKit/Frontend/Editor/IMGLYNavigationController.swift; sourceTree = "<group>"; };
 		1AA739C28A00E363E0444D7F1F1D9255 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
@@ -407,7 +408,6 @@
 		C2A290B3B36C5531D7FB683A26562A73 /* IMGLYK2Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYK2Filter.swift; path = "imglyKit/Backend/Processing/Response Filters/IMGLYK2Filter.swift"; sourceTree = "<group>"; };
 		C4A3F86D69CF9F335A14DDEF1C9DA85D /* IMGLYSummerFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYSummerFilter.swift; path = "imglyKit/Backend/Processing/Response Filters/IMGLYSummerFilter.swift"; sourceTree = "<group>"; };
 		C5C0AF0EBAE9E6353606E25FAF4E09ED /* IMGLYMainEditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYMainEditorViewController.swift; path = imglyKit/Frontend/Editor/IMGLYMainEditorViewController.swift; sourceTree = "<group>"; };
-		C7129D9A2BE8E7972BCE4EE577C96EF6 /* imglyKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "imglyKit-Private.xcconfig"; sourceTree = "<group>"; };
 		C7351B7A913A41DCB08C5964A3279F66 /* BlueShadows.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BlueShadows.png; path = "imglyKit/Backend/Filter Responses/BlueShadows.png"; sourceTree = "<group>"; };
 		C875A2387106D0DBB8A3026152F40499 /* Chest.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Chest.png; path = "imglyKit/Backend/Filter Responses/Chest.png"; sourceTree = "<group>"; };
 		C8CA2CF55F76D7C0E1F05B5F30862375 /* IMGLYBoxGradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMGLYBoxGradientView.swift; path = imglyKit/Frontend/Editor/IMGLYBoxGradientView.swift; sourceTree = "<group>"; };
@@ -588,7 +588,7 @@
 				9ECF270D8450AE8C30F7DC29CCDEF48D /* Info.plist */,
 				987E2D0D9AC3E1AA6BC63C1031198384 /* imglyKit.modulemap */,
 				02B061674DB2427E8F36DC745A80FACC /* imglyKit.xcconfig */,
-				C7129D9A2BE8E7972BCE4EE577C96EF6 /* imglyKit-Private.xcconfig */,
+				1251D564D635CB4F49368091BE546983 /* imglyKit-Private.xcconfig */,
 				71D8F015557871EFC507CD8216533BCF /* imglyKit-dummy.m */,
 				1DFEA5E3266C407D37944BCE4A1AF389 /* imglyKit-prefix.pch */,
 				7A473C75FDEB6D5C4D12F62953863CB9 /* imglyKit-umbrella.h */,
@@ -878,7 +878,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0E85AB4AC37AA68819200C066C27D978 /* PBXTargetDependency */,
+				DBCB1EBD19842BD634EAE00F3F31D1ED /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -1145,21 +1145,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0E85AB4AC37AA68819200C066C27D978 /* PBXTargetDependency */ = {
+		DBCB1EBD19842BD634EAE00F3F31D1ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = imglyKit;
 			target = 3CEC40E6659FF3F7434B629D63A2C893 /* imglyKit */;
-			targetProxy = 1130F5E35579EF30FE18F8C6A6329EEC /* PBXContainerItemProxy */;
+			targetProxy = 6546680B5BDBB1D50C1CA03F5F0F3D2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08E9F4A095F5F83FAF2C69ABE18605AC /* Debug */ = {
+		6D726465F95DF07AC8FBC02C9083EDF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7129D9A2BE8E7972BCE4EE577C96EF6 /* imglyKit-Private.xcconfig */;
+			baseConfigurationReference = 1251D564D635CB4F49368091BE546983 /* imglyKit-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.4.0;
+				CURRENT_PROJECT_VERSION = 2.4.1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 2;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
@@ -1181,33 +1181,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		4E2240E16422FA813E6885E890D9F226 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7129D9A2BE8E7972BCE4EE577C96EF6 /* imglyKit-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.4.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/imglyKit/imglyKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/imglyKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/imglyKit/imglyKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = imglyKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		8D1DD7F57DC95C16BF838357C145301A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1307,6 +1280,33 @@
 			};
 			name = Debug;
 		};
+		FA2067E697DFA35516BF8C8894219A55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1251D564D635CB4F49368091BE546983 /* imglyKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2.4.1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 2;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/imglyKit/imglyKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/imglyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/imglyKit/imglyKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = imglyKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1356,8 +1356,8 @@
 		4515DEF419F5C763413940FC0700555E /* Build configuration list for PBXNativeTarget "imglyKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08E9F4A095F5F83FAF2C69ABE18605AC /* Debug */,
-				4E2240E16422FA813E6885E890D9F226 /* Release */,
+				6D726465F95DF07AC8FBC02C9083EDF0 /* Debug */,
+				FA2067E697DFA35516BF8C8894219A55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

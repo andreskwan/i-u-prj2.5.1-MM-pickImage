@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78A4294B85B5DD9C794A80F7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DF91EBD5A1D4D177348604 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C920DBAC1C10A65100BBDF4E /* DPPImageSubEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920DBAB1C10A65100BBDF4E /* DPPImageSubEditorViewController.swift */; };
 		EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B1A5B1BBCDAA700135040 /* Meme.swift */; };
 		EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CDD1BBA0D9400DAE977 /* AppDelegate.swift */; };
 		EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		33B2FEFA98DB8DD1D16696A6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		44DF91EBD5A1D4D177348604 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E86262BDCC5BC6A4980CFDA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C920DBAB1C10A65100BBDF4E /* DPPImageSubEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPPImageSubEditorViewController.swift; sourceTree = "<group>"; };
 		EA6B1A5B1BBCDAA700135040 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		EADD5CD81BBA0D9400DAE977 /* MM1.1PickingAnImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MM1.1PickingAnImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADD5CDC1BBA0D9400DAE977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */,
+				C920DBAB1C10A65100BBDF4E /* DPPImageSubEditorViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -216,7 +219,6 @@
 				TargetAttributes = {
 					EADD5CD71BBA0D9400DAE977 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = UG88X33WHR;
 					};
 					EADD5CEC1BBA0D9500DAE977 = {
 						CreatedOnToolsVersion = 6.4;
@@ -317,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */,
+				C920DBAC1C10A65100BBDF4E /* DPPImageSubEditorViewController.swift in Sources */,
 				EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */,
 				EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */,
 			);

@@ -36,6 +36,7 @@ public class IMGLYEditorViewController: UIViewController {
         let imageView = IMGLYZoomingImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.userInteractionEnabled = self.enableZoomingInPreviewImage
+        
         return imageView
         }()
     

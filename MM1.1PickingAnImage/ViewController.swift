@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import imglyKit;
+import imglyKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
@@ -79,12 +79,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
         initializeMeme()
-        let cameraViewController = IMGLYCameraViewController(recordingModes: [.Photo, .Video])
-        presentViewController(cameraViewController, animated: true, completion: nil)
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-//        presentViewController(imagePicker, animated: true, completion: nil)
+//        let cameraViewController = IMGLYCameraViewController(recordingModes: [.Photo, .Video])
+//        presentViewController(cameraViewController, animated: true, completion: nil)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func cancelButton(sender: AnyObject) {
         initializeMeme()
@@ -105,12 +105,51 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             actionButton.enabled = true
             imagePickerView.image = image
             dismissViewControllerAnimated(true, completion: nil)
+            showEditorNavigationControllerWithImage(image)
         }
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    
+    // MARK: IMGLY editor
+//    func showEditorNavigationControllerWithImage(image: UIImage) {
+//        let editorViewController = IMGLYMainEditorViewController()
+//        editorViewController.highResolutionImage = image
+////        if let cameraController = cameraController {
+////            editorViewController.initialFilterType = cameraController.effectFilter.filterType
+////            editorViewController.initialFilterIntensity = cameraController.effectFilter.inputIntensity
+////        }
+//        editorViewController.completionBlock = editorCompletionBlock
+//        
+////        let navigationController = IMGLYNavigationController(rootViewController: editorViewController)
+////        navigationController.navigationBar.barStyle = .Black
+////        navigationController.navigationBar.translucent = false
+////        navigationController.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.whiteColor() ]
+//        
+//        self.presentViewController(editorViewController, animated: true, completion: nil)
+//    }
+
+    
+    func showEditorNavigationControllerWithImage(image: UIImage) {
+        let storyboar = UIStoryboard(name: "Main", bundle: nil)
+        let editorViewController = storyboar.instantiateViewControllerWithIdentifier("MainEditor") as! IMGLYMainEditorViewController
+        editorViewController.highResolutionImage = image
+        editorViewController.initialFilterType = .None
+        editorViewController.initialFilterIntensity = 0.5
+        editorViewController.completionBlock = editorCompletionBlock
+        self.presentViewController(editorViewController, animated: true, completion: nil)
+    }
+    
+    private func editorCompletionBlock(result: IMGLYEditorResult, image: UIImage?) {
+        if let image = image where result == .Done {
+            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: UITextFieldDelegate - Methods
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
