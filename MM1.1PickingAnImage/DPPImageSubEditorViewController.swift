@@ -9,6 +9,8 @@
 import Foundation
 import imglyKit
 
-class DPPImageSubEditorViewController: IMGLYSubEditorViewController {
+internal let PhotoProcessorQueue = dispatch_queue_create("ly.img.SDK.PhotoProcessor", DISPATCH_QUEUE_SERIAL)
+
+class DPPImagEditorViewController: UIViewController {
     
 }

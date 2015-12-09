@@ -122,7 +122,7 @@ public class IMGLYMainEditorViewController: IMGLYEditorViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.redColor()
+        
         let bundle = NSBundle(forClass: self.dynamicType)
         navigationItem.title = NSLocalizedString("main-editor.title", tableName: nil, bundle: bundle, value: "", comment: "")
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancelTapped:")
@@ -182,8 +182,6 @@ public class IMGLYMainEditorViewController: IMGLYEditorViewController {
         self.fixedFilterStack = fixedFilterStack
     }
     
-    
-    //should not be here
     private func generateLowResolutionImage() {
         if let highResolutionImage = self.highResolutionImage {
             if highResolutionImage.size.width > maxLowResolutionSideLength || highResolutionImage.size.height > maxLowResolutionSideLength  {

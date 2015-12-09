@@ -231,7 +231,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6546680B5BDBB1D50C1CA03F5F0F3D2F /* PBXContainerItemProxy */ = {
+		CC6BBD4C4F660851EB59AD77EEC03911 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -878,7 +878,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DBCB1EBD19842BD634EAE00F3F31D1ED /* PBXTargetDependency */,
+				9625E490576644BAE97C2C779F8B4123 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -1145,11 +1145,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DBCB1EBD19842BD634EAE00F3F31D1ED /* PBXTargetDependency */ = {
+		9625E490576644BAE97C2C779F8B4123 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = imglyKit;
 			target = 3CEC40E6659FF3F7434B629D63A2C893 /* imglyKit */;
-			targetProxy = 6546680B5BDBB1D50C1CA03F5F0F3D2F /* PBXContainerItemProxy */;
+			targetProxy = CC6BBD4C4F660851EB59AD77EEC03911 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
