@@ -114,35 +114,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     // MARK: IMGLY editor
-//    func showEditorNavigationControllerWithImage(image: UIImage) {
-//        let editorViewController = IMGLYMainEditorViewController()
-//        editorViewController.highResolutionImage = image
-////        if let cameraController = cameraController {
-////            editorViewController.initialFilterType = cameraController.effectFilter.filterType
-////            editorViewController.initialFilterIntensity = cameraController.effectFilter.inputIntensity
-////        }
-//        editorViewController.completionBlock = editorCompletionBlock
-//        
-////        let navigationController = IMGLYNavigationController(rootViewController: editorViewController)
-////        navigationController.navigationBar.barStyle = .Black
-////        navigationController.navigationBar.translucent = false
-////        navigationController.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.whiteColor() ]
-//        
-//        self.presentViewController(editorViewController, animated: true, completion: nil)
-//    }
-
-    
     func showEditorNavigationControllerWithImage(image: UIImage) {
-        let storyboar = UIStoryboard(name: "Main", bundle: nil)
-        let editorViewController = storyboar.instantiateViewControllerWithIdentifier("MainEditor") as! IMGLYMainEditorViewController
+        let editorViewController = MainEditorViewController()
         editorViewController.highResolutionImage = image
-        editorViewController.initialFilterType = .None
-        editorViewController.initialFilterIntensity = 0.5
+//        if let cameraController = cameraController {
+//            editorViewController.initialFilterType = cameraController.effectFilter.filterType
+//            editorViewController.initialFilterIntensity = cameraController.effectFilter.inputIntensity
+//        }
         editorViewController.completionBlock = editorCompletionBlock
+        
+//        let navigationController = IMGLYNavigationController(rootViewController: editorViewController)
+//        navigationController.navigationBar.barStyle = .Black
+//        navigationController.navigationBar.translucent = false
+//        navigationController.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.whiteColor() ]
+        
         self.presentViewController(editorViewController, animated: true, completion: nil)
     }
+
     
-    private func editorCompletionBlock(result: IMGLYEditorResult, image: UIImage?) {
+//    func showEditorNavigationControllerWithImage(image: UIImage) {
+////        let storyboar = UIStoryboard(name: "Main", bundle: nil)
+////        let editorViewController = storyboar.instantiateViewControllerWithIdentifier("MainEditor") as! MainEditorViewController
+//        editorViewController.highResolutionImage = image
+//        editorViewController.initialFilterType = .None
+//        editorViewController.initialFilterIntensity = 0.5
+//        editorViewController.completionBlock = editorCompletionBlock
+//        self.presentViewController(editorViewController, animated: true, completion: nil)
+//    }
+    
+    private func editorCompletionBlock(result: EditorResult, image: UIImage?) {
         if let image = image where result == .Done {
             UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
         }

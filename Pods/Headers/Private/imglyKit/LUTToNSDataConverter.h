@@ -1,1 +1,1 @@
-../../../imglyKit/imglyKit/Backend/Processing/LUTToNSDataConverter.h
+../../../../../imgly-sdk-ios-pp/imglyKit/Backend/Processing/LUTToNSDataConverter.h
