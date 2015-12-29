@@ -1,10 +1,14 @@
 PODS:
-  - imglyKit (2.4.1)
+  - imglyKit (2.4.0)
 
 DEPENDENCIES:
-  - imglyKit (~> 2.4)
+  - imglyKit (from `../imgly-sdk-ios-pp`)
+
+EXTERNAL SOURCES:
+  imglyKit:
+    :path: ../imgly-sdk-ios-pp
 
 SPEC CHECKSUMS:
-  imglyKit: f30ce863024e3d711520e422197711dc42f8c1e3
+  imglyKit: 0cad9283d29806902f3f60c7799e29dba74d806d
 
 COCOAPODS: 0.38.2
