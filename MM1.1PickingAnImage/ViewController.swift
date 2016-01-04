@@ -166,8 +166,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // MARK: Meme Model
-    func save() -> Meme {
-        return Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
+    func save() {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
+        (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
     }
     func generateMemedImage() {
         toggleBars()
