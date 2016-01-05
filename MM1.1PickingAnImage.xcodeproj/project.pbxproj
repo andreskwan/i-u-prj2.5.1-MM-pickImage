@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA651EC31C3B835F008A2F34 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */; };
+		EA651EC51C3B8376008A2F34 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */; };
 		EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B1A5B1BBCDAA700135040 /* Meme.swift */; };
 		EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CDD1BBA0D9400DAE977 /* AppDelegate.swift */; };
 		EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentMemesCollectionViewController.swift; path = Controllers/SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
+		EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentMemesTableViewController.swift; path = Controllers/SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		EA6B1A5B1BBCDAA700135040 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		EADD5CD81BBA0D9400DAE977 /* MM1.1PickingAnImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MM1.1PickingAnImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADD5CDC1BBA0D9400DAE977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				EADD5CDB1BBA0D9400DAE977 /* Supporting Files */,
 				EADD5CE41BBA0D9400DAE977 /* Images.xcassets */,
 				EADD5CE61BBA0D9400DAE977 /* LaunchScreen.xib */,
+				EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */,
+				EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */,
 			);
 			path = MM1.1PickingAnImage;
 			sourceTree = "<group>";
@@ -219,6 +225,8 @@
 			files = (
 				EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */,
 				EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */,
+				EA651EC31C3B835F008A2F34 /* SentMemesCollectionViewController.swift in Sources */,
+				EA651EC51C3B8376008A2F34 /* SentMemesTableViewController.swift in Sources */,
 				EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
