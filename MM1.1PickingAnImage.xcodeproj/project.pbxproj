@@ -62,6 +62,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA5882931C419503008CC36D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */,
+				EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */,
+				EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EA5882941C41951D008CC36D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA6B1A5B1BBCDAA700135040 /* Meme.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EA5882951C419534008CC36D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EADD5CE11BBA0D9400DAE977 /* Main.storyboard */,
+				EADD5CE41BBA0D9400DAE977 /* Images.xcassets */,
+				EADD5CE61BBA0D9400DAE977 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		EADD5CCF1BBA0D9400DAE977 = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +111,10 @@
 		EADD5CDA1BBA0D9400DAE977 /* MM1.1PickingAnImage */ = {
 			isa = PBXGroup;
 			children = (
-				EA6B1A5B1BBCDAA700135040 /* Meme.swift */,
-				EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */,
-				EADD5CE11BBA0D9400DAE977 /* Main.storyboard */,
+				EA5882931C419503008CC36D /* Controllers */,
+				EA5882941C41951D008CC36D /* Model */,
+				EA5882951C419534008CC36D /* View */,
 				EADD5CDB1BBA0D9400DAE977 /* Supporting Files */,
-				EADD5CE41BBA0D9400DAE977 /* Images.xcassets */,
-				EADD5CE61BBA0D9400DAE977 /* LaunchScreen.xib */,
-				EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */,
-				EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */,
 			);
 			path = MM1.1PickingAnImage;
 			sourceTree = "<group>";

@@ -45,7 +45,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="yrc-Gn-IFb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8vo-xD-r8e"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8vo-xD-r8e">
+                            <connections>
+                                <action selector="showMemeEditor:" destination="QfB-It-RwD" id="UL1-cj-L4J"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpa-lg-Sid" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +111,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MM1_1PickingAnImage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditor" id="BYZ-38-t0r" customClass="ViewController" customModule="MM1_1PickingAnImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -244,7 +248,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iN5-7e-FKi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jwf-4v-uyK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationForMemeEditor" automaticallyAdjustsScrollViewInsets="NO" id="Jwf-4v-uyK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQP-E1-Mi8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
