@@ -40,7 +40,18 @@ class SentMemesTableViewController: UITableViewController {
         cell.textLabel?.text = "\(meme.topText) \(meme.bottomText)" as String
         return cell
     }
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            //Grab the DetailVC from Storyboard
+            let object: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("VillainDetailViewController")
+            let detailVC = object as! MemeDetailViewController
+
+            let meme = memes[indexPath.row]
+            //Populate view controller with data from the selected item
+            detailVC.memeImage!.image = meme.memedImage
+            
+            //Present the view controller using navigation
+            self.navigationController!.pushViewController(detailVC, animated: true)
+    }
     @IBAction func showMemeEditor(sender: AnyObject) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("NavigationForMemeEditor")

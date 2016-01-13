@@ -16,6 +16,7 @@
 		EADD5CE51BBA0D9400DAE977 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADD5CE41BBA0D9400DAE977 /* Images.xcassets */; };
 		EADD5CE81BBA0D9400DAE977 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADD5CE61BBA0D9400DAE977 /* LaunchScreen.xib */; };
 		EADD5CF41BBA0D9500DAE977 /* MM1_1PickingAnImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD5CF31BBA0D9500DAE977 /* MM1_1PickingAnImageTests.swift */; };
+		EAF7DD3C1C44C2C80066EED9 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF7DD3B1C44C2C80066EED9 /* MemeDetailViewController.swift */; };
 		EAFD888C1C42BF6B0022F742 /* SentMemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD888B1C42BF6B0022F742 /* SentMemeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		EADD5CED1BBA0D9500DAE977 /* MM1.1PickingAnImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MM1.1PickingAnImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADD5CF21BBA0D9500DAE977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADD5CF31BBA0D9500DAE977 /* MM1_1PickingAnImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM1_1PickingAnImageTests.swift; sourceTree = "<group>"; };
+		EAF7DD3B1C44C2C80066EED9 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeDetailViewController.swift; path = Controllers/MemeDetailViewController.swift; sourceTree = "<group>"; };
 		EAFD888B1C42BF6B0022F742 /* SentMemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentMemeCollectionViewCell.swift; path = View/SentMemeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				EADD5CDF1BBA0D9400DAE977 /* ViewController.swift */,
 				EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */,
 				EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */,
+				EAF7DD3B1C44C2C80066EED9 /* MemeDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				EADD5CE01BBA0D9400DAE977 /* ViewController.swift in Sources */,
 				EA651EC31C3B835F008A2F34 /* SentMemesCollectionViewController.swift in Sources */,
 				EA651EC51C3B8376008A2F34 /* SentMemesTableViewController.swift in Sources */,
+				EAF7DD3C1C44C2C80066EED9 /* MemeDetailViewController.swift in Sources */,
 				EAFD888C1C42BF6B0022F742 /* SentMemeCollectionViewCell.swift in Sources */,
 				EADD5CDE1BBA0D9400DAE977 /* AppDelegate.swift in Sources */,
 			);

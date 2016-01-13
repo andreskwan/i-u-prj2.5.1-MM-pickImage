@@ -41,6 +41,49 @@
             </objects>
             <point key="canvasLocation" x="564" y="-563"/>
         </scene>
+        <!--Meme Detail Navigation Controller-->
+        <scene sceneID="qO1-n2-pAi">
+            <objects>
+                <navigationController id="J12-Ur-Rd4" userLabel="Meme Detail Navigation Controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="diQ-fH-TTp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kse-zg-4a7" kind="push" id="Ecl-xx-yKm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i70-1O-G9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="-255"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="0nz-2U-tj4">
+            <objects>
+                <viewController storyboardIdentifier="VillainDetailViewController" id="Kse-zg-4a7" userLabel="Meme Detail View Controller" customClass="MemeDetailViewController" customModule="MM1_1PickingAnImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rxK-lz-1S5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Amd-AX-DzD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ceh-Vl-tua">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-wh-l3x">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rG2-pn-dwU"/>
+                    <connections>
+                        <outlet property="memeImage" destination="wyT-wh-l3x" id="hRm-aI-8VK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="68A-mN-vO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="-255"/>
+        </scene>
         <!--Navigation for Table-->
         <scene sceneID="5br-Ms-kzN">
             <objects>
