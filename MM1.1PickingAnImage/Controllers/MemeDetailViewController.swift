@@ -9,5 +9,7 @@
 import UIKit
 
 class MemeDetailViewController: UIViewController {
+    var image: UIImage?
+    
     @IBOutlet weak var memeImage: UIImageView!
 }
