@@ -47,10 +47,12 @@ class SentMemesTableViewController: UITableViewController {
 
             let meme = memes[indexPath.row]
             //Populate view controller with data from the selected item
-            detailVC.memeImage!.image = meme.memedImage
+            detailVC.image = meme.memedImage
             
-            //Present the view controller using navigation
-            self.navigationController!.pushViewController(detailVC, animated: true)
+            //Present the detailVC modally
+            self.presentViewController(detailVC, animated: true, completion: nil)
+            //Present the detailVC master-detail using navigation
+//            self.navigationController!.pushViewController(detailVC, animated: true)
     }
     @IBAction func showMemeEditor(sender: AnyObject) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
