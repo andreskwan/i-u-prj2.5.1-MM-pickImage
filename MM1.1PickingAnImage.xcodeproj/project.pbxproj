@@ -201,6 +201,7 @@
 				TargetAttributes = {
 					EADD5CD71BBA0D9400DAE977 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = UG88X33WHR;
 					};
 					EADD5CEC1BBA0D9500DAE977 = {
 						CreatedOnToolsVersion = 6.4;

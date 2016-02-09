@@ -34,6 +34,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @IBAction func showMemeEditor(sender: AnyObject) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("NavigationForMemeEditor")
+        //TODO: present modally or Master-Detail?
         self.presentViewController(memeEditorVC, animated: true, completion: nil)
     }
     

@@ -28,6 +28,7 @@ class SentMemesTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        //TODO: use a constant instead a hardcode number
         self.tableView.rowHeight = 100
         //1 dequeue/obtain a cell
         let cell = tableView.dequeueReusableCellWithIdentifier("TableCell")!
@@ -50,9 +51,9 @@ class SentMemesTableViewController: UITableViewController {
             detailVC.image = meme.memedImage
             
             //Present the detailVC modally
-            self.presentViewController(detailVC, animated: true, completion: nil)
-            //Present the detailVC master-detail using navigation
-//            self.navigationController!.pushViewController(detailVC, animated: true)
+//            self.presentViewController(detailVC, animated: true, completion: nil)
+//            Present the detailVC master-detail using navigation
+            self.navigationController!.pushViewController(detailVC, animated: true)
     }
     @IBAction func showMemeEditor(sender: AnyObject) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
