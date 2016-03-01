@@ -22,6 +22,16 @@ class SentMemesCollectionViewController: UICollectionViewController {
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.reloadData()
     }
+    
+    // MARK: IBActions
+    @IBAction func showMemeEditor(sender: AnyObject) {
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("NavigationForMemeEditor")
+        //TODO: present modally or Master-Detail?
+        self.presentViewController(memeEditorVC, animated: true, completion: nil)
+    }
+    
+    // MARK: CollectionView - DataSource Methods
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -31,11 +41,4 @@ class SentMemesCollectionViewController: UICollectionViewController {
         cell.memeImage.image = meme.memedImage
         return cell
     }
-    @IBAction func showMemeEditor(sender: AnyObject) {
-        let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("NavigationForMemeEditor")
-        //TODO: present modally or Master-Detail?
-        self.presentViewController(memeEditorVC, animated: true, completion: nil)
-    }
-    
 }

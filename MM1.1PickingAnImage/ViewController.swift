@@ -85,6 +85,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     @IBAction func cancelButton(sender: AnyObject) {
         initializeMeme()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func displayActivityVC(sender: UIBarButtonItem) {
         generateMemedImage()
@@ -165,7 +166,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         })
     }
     
-    // MARK: Meme Model - Kwan
+    // MARK: Meme Model - methods
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
