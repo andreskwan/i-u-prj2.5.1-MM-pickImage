@@ -44,9 +44,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     // MARK: CollectionView - Delegate Methods
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("VillainDetailViewController") as! MemeDetailViewController
+        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         let meme = memes[indexPath.item]
         detailVC.image = meme.memedImage
+        detailVC.meme = meme 
         
         self.navigationController!.pushViewController(detailVC, animated: true)
         

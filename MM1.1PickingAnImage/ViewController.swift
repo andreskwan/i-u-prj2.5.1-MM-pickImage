@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var keyBoardHeight: CGFloat!
     var shouldHideBars: Bool!
     var memedImage: UIImage!
+    var meme: Meme!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
@@ -37,6 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         initializeMeme()
     }
     override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.tabBar.hidden = true
         super.viewWillAppear(true)
         subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
@@ -51,21 +53,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func initializeMeme(){
         shouldHideBars = false
         toggleBars()
-        
-        topTextField.text = "TOP"
+
+        if let _ = meme {
+            topTextField.text = meme.topText! as String
+            bottomTextfield.text = meme.bottomText! as String
+            imagePickerView.image = meme.image
+        } else {
+            topTextField.text = "TOP"
+            bottomTextfield.text = "BOTTOM"
+            imagePickerView.image = nil
+        }
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         topTextField.textAlignment = NSTextAlignment.Center
         topTextField.delegate = self
-        
-        bottomTextfield.text = "BOTTOM"
         bottomTextfield.defaultTextAttributes = memeTextAttributes
         bottomTextfield.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         bottomTextfield.textAlignment = NSTextAlignment.Center
         bottomTextfield.delegate = self
         
         actionButton.enabled = false
-        imagePickerView.image = nil
     }
     
     // MARK: IBActions

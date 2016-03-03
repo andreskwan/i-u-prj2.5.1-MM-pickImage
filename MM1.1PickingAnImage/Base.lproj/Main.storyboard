@@ -44,7 +44,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="0nz-2U-tj4">
             <objects>
-                <viewController storyboardIdentifier="VillainDetailViewController" id="Kse-zg-4a7" userLabel="Meme Detail View Controller" customClass="MemeDetailViewController" customModule="MM1_1PickingAnImage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="Kse-zg-4a7" userLabel="Meme Detail View Controller" customClass="MemeDetailViewController" customModule="MM1_1PickingAnImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rxK-lz-1S5"/>
                         <viewControllerLayoutGuide type="bottom" id="Amd-AX-DzD"/>
@@ -59,14 +59,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rG2-pn-dwU"/>
+                    <navigationItem key="navigationItem" id="rG2-pn-dwU">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="2Z9-ro-Ifd">
+                            <connections>
+                                <action selector="showMemeEditor:" destination="Kse-zg-4a7" id="gP7-2Y-AaP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="memeImage" destination="wyT-wh-l3x" id="hRm-aI-8VK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68A-mN-vO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="-305"/>
+            <point key="canvasLocation" x="1372" y="-563"/>
         </scene>
         <!--Navigation for Table-->
         <scene sceneID="5br-Ms-kzN">
@@ -234,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="688"/>
+            <point key="canvasLocation" x="1372" y="96"/>
         </scene>
         <!--TabBar for Table & Collection-->
         <scene sceneID="pSZ-pV-hwk">
@@ -274,6 +280,7 @@
         <!--Navigation for Meme Editor-->
         <scene sceneID="iN5-7e-FKi">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCb-K4-vch" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavigationForMemeEditor" automaticallyAdjustsScrollViewInsets="NO" id="Jwf-4v-uyK" userLabel="Navigation for Meme Editor" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQP-E1-Mi8">
@@ -285,13 +292,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cN9-9J-zqU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BCb-K4-vch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="688"/>
+            <point key="canvasLocation" x="948" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wMy-tG-HaU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qO0-No-oyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavigationForMemeDetail" automaticallyAdjustsScrollViewInsets="NO" id="Xet-Wm-dlM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QaW-FZ-ZA8">
@@ -303,9 +310,8 @@
                         <segue destination="Kse-zg-4a7" kind="relationship" relationship="rootViewController" id="3qI-Ss-jrb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qO0-No-oyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-305"/>
+            <point key="canvasLocation" x="948" y="-553"/>
         </scene>
     </scenes>
     <resources>
