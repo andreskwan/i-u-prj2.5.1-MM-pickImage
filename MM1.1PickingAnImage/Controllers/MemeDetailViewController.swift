@@ -27,10 +27,12 @@ class MemeDetailViewController: UIViewController {
     // MARK: IBActions
     @IBAction func showMemeEditor(sender: AnyObject) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        let editorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! ViewController
+        let editorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         editorVC.meme = meme
-        self.navigationController!.pushViewController(editorVC, animated: true)
-//        self.presentViewController(editorVC, animated: true, completion: nil)
+        
+//        self.navigationController!.pushViewController(editorVC, animated: true)
+        self.presentViewController(editorVC, animated: true, completion: nil)
+        navigationController!.popViewControllerAnimated(true)
     }
 
 }
