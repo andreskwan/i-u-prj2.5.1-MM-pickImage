@@ -9,8 +9,9 @@
 import UIKit
 
 class MemeDetailViewController: UIViewController {
-    var image: UIImage?
     var meme: Meme?
+    var memeIndex: Int?
+    
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -31,6 +32,7 @@ class MemeDetailViewController: UIViewController {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let editorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         editorVC.meme = meme
+        editorVC.memeIndex = memeIndex
         
 //        self.navigationController!.pushViewController(editorVC, animated: true)
         self.presentViewController(editorVC, animated: true, completion: nil)

@@ -25,6 +25,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     var shouldHideBars: Bool!
     var memedImage: UIImage!
     var meme: Meme!
+    var memeIndex: Int!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName: UIColor.blackColor(),
@@ -41,6 +42,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
 //        self.tabBarController?.tabBar.hidden = true
         super.viewWillAppear(true)
         subscribeToKeyboardNotifications()
+        //enable if the device has a camera
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     override func viewWillDisappear(animated: Bool) {
@@ -53,15 +55,18 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     func initializeMeme(){
         shouldHideBars = false
         toggleBars()
-
+        var allowSave: Bool?
+        // edit a meme
         if let _ = meme {
             topTextField.text = meme.topText! as String
             bottomTextfield.text = meme.bottomText! as String
             imagePickerView.image = meme.image
-        } else {
+            allowSave = true
+        } else { //Create new meme
             topTextField.text = "TOP"
             bottomTextfield.text = "BOTTOM"
             imagePickerView.image = nil
+            allowSave = false
         }
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
@@ -71,8 +76,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         bottomTextfield.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         bottomTextfield.textAlignment = NSTextAlignment.Center
         bottomTextfield.delegate = self
-        
-        actionButton.enabled = false
+        // allow to save/share edited meme
+        actionButton.enabled = allowSave!
     }
     
     // MARK: IBActions
@@ -175,9 +180,13 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // MARK: Meme Model - methods
     func save() {
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.memes.append(meme)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, image: imagePickerView.image!, memedImage: memedImage)
+        if let _ = memeIndex {
+            appDelegate.memes[memeIndex] = meme
+        } else {
+            appDelegate.memes.append(meme)
+        }
     }
     func generateMemedImage() {
         toggleBars()

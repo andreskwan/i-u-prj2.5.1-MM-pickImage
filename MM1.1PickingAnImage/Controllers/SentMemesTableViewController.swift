@@ -71,11 +71,8 @@ class SentMemesTableViewController: UITableViewController {
         let meme = memes[indexPath.row]
         //Populate view controller with data from the selected item
         detailVC.meme = meme
-//        detailVC.image = meme.memedImage
+        detailVC.memeIndex = indexPath.row
         
-        //Present the detailVC modally
-        //            self.presentViewController(detailVC, animated: true, completion: nil)
-        //            Present the detailVC master-detail using navigation
         self.navigationController!.pushViewController(detailVC, animated: true)
     }
 }
