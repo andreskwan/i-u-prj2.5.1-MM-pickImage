@@ -33,9 +33,10 @@ class MemeDetailViewController: UIViewController {
         let editorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         editorVC.meme = meme
         editorVC.memeIndex = memeIndex
-        
-//        self.navigationController!.pushViewController(editorVC, animated: true)
+        //To present editorVC
         self.presentViewController(editorVC, animated: true, completion: nil)
+        //To remove itself from the navigationController stack
+        //when EditorVC-cancel buttom is tapped the top VC in the navigationController is presented
         navigationController!.popViewControllerAnimated(true)
     }
 

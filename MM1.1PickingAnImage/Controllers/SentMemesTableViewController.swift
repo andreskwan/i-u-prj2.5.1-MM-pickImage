@@ -27,9 +27,6 @@ class SentMemesTableViewController: UITableViewController {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         self.presentViewController(memeEditorVC, animated: true, completion: nil)
-        
-
-//        self.navigationController!.pushViewController(memeEditorVC, animated: true)
     }
     
     // MARK: TableView - DataSource Methods

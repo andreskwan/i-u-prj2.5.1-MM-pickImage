@@ -28,7 +28,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         //TODO: present modally or Master-Detail?
-//        self.navigationController!.pushViewController(memeEditorVC, animated: true)
         self.presentViewController(memeEditorVC, animated: true, completion: nil)
     }
     
