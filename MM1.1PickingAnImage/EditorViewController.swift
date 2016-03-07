@@ -96,7 +96,6 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func cancelButton(sender: AnyObject) {
-        initializeMeme()
         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func displayActivityVC(sender: UIBarButtonItem) {
