@@ -189,11 +189,17 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     func generateMemedImage() {
         toggleBars()
-        UIGraphicsBeginImageContext(self.subView.frame.size)
-        self.view.drawViewHierarchyInRect(self.subView.frame, afterScreenUpdates: true)
+        let backgroundColor = imagePickerView.backgroundColor
+        imagePickerView.backgroundColor = UIColor.clearColor()
+        let frameSize = self.imagePickerView.frame.size
+        UIGraphicsBeginImageContext(frameSize)
+        self.imagePickerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        let nsdata = UIImagePNGRepresentation(memedImage)
+        memedImage = UIImage.init(data: nsdata!)
         toggleBars()
+        imagePickerView.backgroundColor = backgroundColor
     }
     
     // MARK: Tap Gesture
