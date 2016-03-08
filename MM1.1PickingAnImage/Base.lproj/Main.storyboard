@@ -128,14 +128,40 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXS-6M-aGg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aXS-6M-aGg">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bN8-dZ-Nuq" userLabel="topLabel">
+                                            <rect key="frame" x="8" y="8" width="84" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alZ-f1-Bqy" userLabel="bottomLabel">
+                                            <rect key="frame" x="8" y="71" width="84" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="alZ-f1-Bqy" firstAttribute="leading" secondItem="AYf-yu-PPf" secondAttribute="leadingMargin" id="6dg-Ai-7gU"/>
+                                    <constraint firstAttribute="bottom" secondItem="aXS-6M-aGg" secondAttribute="bottom" id="DsB-S4-HhC"/>
+                                    <constraint firstItem="alZ-f1-Bqy" firstAttribute="trailing" secondItem="bN8-dZ-Nuq" secondAttribute="trailing" id="Giv-e9-YZ2"/>
+                                    <constraint firstItem="aXS-6M-aGg" firstAttribute="top" secondItem="AYf-yu-PPf" secondAttribute="top" id="I1S-I6-MQs"/>
+                                    <constraint firstItem="alZ-f1-Bqy" firstAttribute="bottom" secondItem="AYf-yu-PPf" secondAttribute="bottomMargin" id="bSS-gc-w4x"/>
+                                    <constraint firstItem="bN8-dZ-Nuq" firstAttribute="top" secondItem="AYf-yu-PPf" secondAttribute="topMargin" id="dCv-Sq-Hi5"/>
+                                    <constraint firstItem="alZ-f1-Bqy" firstAttribute="leading" secondItem="bN8-dZ-Nuq" secondAttribute="leading" id="eBK-jy-0fc"/>
+                                    <constraint firstItem="aXS-6M-aGg" firstAttribute="leading" secondItem="AYf-yu-PPf" secondAttribute="leading" id="ewN-nm-jwQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="aXS-6M-aGg" secondAttribute="trailing" id="rkL-dT-HAn"/>
+                                    <constraint firstItem="alZ-f1-Bqy" firstAttribute="centerX" secondItem="aXS-6M-aGg" secondAttribute="centerX" id="xxg-vI-nG1"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="bottomLabel" destination="alZ-f1-Bqy" id="Gjq-Cp-9sl"/>
                                     <outlet property="memeImage" destination="aXS-6M-aGg" id="iW8-c7-ysf"/>
+                                    <outlet property="topLabel" destination="bN8-dZ-Nuq" id="Bz8-4e-bPY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

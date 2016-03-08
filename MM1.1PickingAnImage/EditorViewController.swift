@@ -36,7 +36,6 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         initializeMeme()
     }
     override func viewWillAppear(animated: Bool) {
-//        self.tabBarController?.tabBar.hidden = true
         super.viewWillAppear(true)
         subscribeToKeyboardNotifications()
         //enable if the device has a camera
