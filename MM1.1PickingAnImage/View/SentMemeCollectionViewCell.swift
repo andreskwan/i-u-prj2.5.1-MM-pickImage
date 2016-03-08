@@ -8,6 +8,9 @@
 
 import UIKit
 
-class SentMemeCollectionViewCell: UICollectionViewCell {
+class SentMemeCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    
 }
