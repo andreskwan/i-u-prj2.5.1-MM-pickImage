@@ -14,12 +14,9 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextfield: UITextField!
-    @IBOutlet weak var subView: UIView!
-    @IBOutlet weak var subviewTopConstrain: NSLayoutConstraint!
-    @IBOutlet weak var subviewBottomConstrain: NSLayoutConstraint!
-    @IBOutlet weak var topTextFieldConstrain: NSLayoutConstraint!
-    @IBOutlet weak var bottomTextFieldConstrain: NSLayoutConstraint!
     @IBOutlet weak var actionButton: UIBarButtonItem!
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
     
     var keyBoardHeight: CGFloat!
     var shouldHideBars: Bool!
@@ -53,8 +50,6 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         return true
     }
     func initializeMeme(){
-        shouldHideBars = false
-        toggleBars()
         var allowSave: Bool?
         // edit a meme
         if let _ = meme {
@@ -188,29 +183,22 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     func generateMemedImage() {
-        toggleBars()
+        hideBars(true)
         let backgroundColor = view.backgroundColor
         view.backgroundColor = UIColor.clearColor()
-        let frameSize = self.imagePickerView.frame.size
+        let frameSize = self.view.frame.size
         UIGraphicsBeginImageContext(frameSize)
         self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         let nsdata = UIImagePNGRepresentation(memedImage)
         memedImage = UIImage.init(data: nsdata!)
-        toggleBars()
+        hideBars(false)
         view.backgroundColor = backgroundColor
     }
-    
-    // MARK: Tap Gesture
-    func toggleBars()
+    func hideBars(shouldHideBars:Bool)
     {
-        self.navigationController?.setNavigationBarHidden(shouldHideBars, animated: false)
-        self.navigationController?.setToolbarHidden(shouldHideBars, animated: false)
-        if shouldHideBars != false{
-            subviewTopConstrain.constant = 0
-            subviewBottomConstrain.constant = 0
-        }
-        shouldHideBars = !shouldHideBars
+        topToolBar.hidden = shouldHideBars
+        bottomToolBar.hidden = shouldHideBars
     }
 }
