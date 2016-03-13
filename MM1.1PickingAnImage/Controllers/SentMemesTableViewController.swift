@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SentMemesTableViewController: UITableViewController {
+class SentMemesTableViewController: UITableViewController, UITextFieldDelegate {
     var memes: [Meme]!
     
     let memeTextAttributes = [
@@ -56,10 +56,13 @@ class SentMemesTableViewController: UITableViewController {
         cell.topTextField.defaultTextAttributes = memeTextAttributes
         cell.topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         cell.topTextField.textAlignment = NSTextAlignment.Center
+        cell.topTextField.delegate = self
+        
         cell.bottomTextField.defaultTextAttributes = memeTextAttributes
         cell.bottomTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         cell.bottomTextField.textAlignment = NSTextAlignment.Center
-
+        cell.bottomTextField.delegate = self
+        
         cell.memeImageView.image = meme.image!
         cell.topTextField.text = meme.topText as String
         cell.bottomTextField.text = meme.bottomText as String
@@ -90,5 +93,10 @@ class SentMemesTableViewController: UITableViewController {
         detailVC.memeIndex = indexPath.row
         
         self.navigationController!.pushViewController(detailVC, animated: true)
+    }
+    
+    // MARK: TextField - Delegate
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return false
     }
 }
