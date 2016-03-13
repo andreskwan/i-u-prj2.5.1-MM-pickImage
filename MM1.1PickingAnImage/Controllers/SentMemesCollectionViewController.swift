@@ -8,8 +8,16 @@
 
 import UIKit
 
-class SentMemesCollectionViewController: UICollectionViewController {
+class SentMemesCollectionViewController: UICollectionViewController, UITextFieldDelegate {
     var memes: [Meme]!
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSStrokeWidthAttributeName: -3.0,
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 16)!,
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -38,9 +46,22 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomMemeCell", forIndexPath: indexPath) as! SentMemeCollectionViewCell
         let meme = memes[indexPath.item]
-        cell.memeImage.image = meme.image
-        cell.topLabel.text = meme.topText! as String
-        cell.bottomLabel.text = meme.bottomText! as String
+        
+
+        cell.topTextField.defaultTextAttributes = memeTextAttributes
+        cell.topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        cell.topTextField.textAlignment = NSTextAlignment.Center
+        cell.topTextField.delegate = self
+        
+        cell.bottomTextField.defaultTextAttributes = memeTextAttributes
+        cell.bottomTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        cell.bottomTextField.textAlignment = NSTextAlignment.Center
+        cell.bottomTextField.delegate = self
+        
+        cell.memeImage.image = meme.image!
+        cell.topTextField.text = meme.topText as String
+        cell.bottomTextField.text = meme.bottomText as String
+
         return cell
     }
     
@@ -55,5 +76,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.navigationController!.pushViewController(detailVC, animated: true)
         
     }
-    
+
+    // MARK: TextField - Delegate
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return false
+    }    
 }
