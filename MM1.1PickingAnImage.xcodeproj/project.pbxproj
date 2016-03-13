@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA47BE5D1C951DCC00B1FB3B /* SentMemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA47BE5C1C951DCC00B1FB3B /* SentMemesTableViewCell.swift */; };
 		EA651EC31C3B835F008A2F34 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */; };
 		EA651EC51C3B8376008A2F34 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */; };
 		EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B1A5B1BBCDAA700135040 /* Meme.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA47BE5C1C951DCC00B1FB3B /* SentMemesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentMemesTableViewCell.swift; path = MM1.1PickingAnImage/View/SentMemesTableViewCell.swift; sourceTree = "<group>"; };
 		EA651EC21C3B835F008A2F34 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentMemesCollectionViewController.swift; path = Controllers/SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		EA651EC41C3B8376008A2F34 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentMemesTableViewController.swift; path = Controllers/SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		EA6B1A5B1BBCDAA700135040 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		EADD5CCF1BBA0D9400DAE977 = {
 			isa = PBXGroup;
 			children = (
+				EA47BE5C1C951DCC00B1FB3B /* SentMemesTableViewCell.swift */,
 				EADD5CDA1BBA0D9400DAE977 /* MM1.1PickingAnImage */,
 				EADD5CF01BBA0D9500DAE977 /* MM1.1PickingAnImageTests */,
 				EADD5CD91BBA0D9400DAE977 /* Products */,
@@ -201,7 +204,6 @@
 				TargetAttributes = {
 					EADD5CD71BBA0D9400DAE977 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = UG88X33WHR;
 					};
 					EADD5CEC1BBA0D9500DAE977 = {
 						CreatedOnToolsVersion = 6.4;
@@ -256,6 +258,7 @@
 				EA6B1A5C1BBCDAA700135040 /* Meme.swift in Sources */,
 				EADD5CE01BBA0D9400DAE977 /* EditorViewController.swift in Sources */,
 				EA651EC31C3B835F008A2F34 /* SentMemesCollectionViewController.swift in Sources */,
+				EA47BE5D1C951DCC00B1FB3B /* SentMemesTableViewCell.swift in Sources */,
 				EA651EC51C3B8376008A2F34 /* SentMemesTableViewController.swift in Sources */,
 				EAF7DD3C1C44C2C80066EED9 /* MemeDetailViewController.swift in Sources */,
 				EAFD888C1C42BF6B0022F742 /* SentMemeCollectionViewCell.swift in Sources */,

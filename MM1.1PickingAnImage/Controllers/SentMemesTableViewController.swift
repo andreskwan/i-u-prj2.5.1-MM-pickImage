@@ -10,6 +10,15 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
     var memes: [Meme]!
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSStrokeWidthAttributeName: -3.0,
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 16)!,
+    ]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -38,14 +47,24 @@ class SentMemesTableViewController: UITableViewController {
         //TODO: use a constant instead a hardcode number
         self.tableView.rowHeight = 100
         //1 dequeue/obtain a cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("TableCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("TableCell")! as! SentMemesTableViewCell
         
         //2 obtain the data for the row
         let meme = memes[indexPath.row]
         
         //3 add data to the cell
-        cell.imageView?.image = meme.memedImage!
-        cell.textLabel?.text = "\(meme.topText) \(meme.bottomText)" as String
+        cell.topTextField.defaultTextAttributes = memeTextAttributes
+        cell.topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        cell.topTextField.textAlignment = NSTextAlignment.Center
+        cell.bottomTextField.defaultTextAttributes = memeTextAttributes
+        cell.bottomTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        cell.bottomTextField.textAlignment = NSTextAlignment.Center
+
+        cell.memeImageView.image = meme.image!
+        cell.topTextField.text = meme.topText as String
+        cell.bottomTextField.text = meme.bottomText as String
+        cell.memeMessageLabel.text = "\(meme.topText) \(meme.bottomText)" as String
+        
         return cell
     }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
