@@ -84,8 +84,7 @@ class SentMemesTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: TableView - Delegate Methods
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Grab the DetailVC from Storyboard
-        let object: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController")
-        let detailVC = object as! MemeDetailViewController
+        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         let meme = memes[indexPath.row]
         //Populate view controller with data from the selected item
