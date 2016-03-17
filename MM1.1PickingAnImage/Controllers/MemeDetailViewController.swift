@@ -21,6 +21,10 @@ class MemeDetailViewController: UIViewController {
         memeImage.image = meme?.memedImage
         navigationItem.rightBarButtonItem = editButton
     }
+
+//    @IBAction func cancelbutton(sender: AnyObject) {
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
     
     override func viewWillDisappear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false

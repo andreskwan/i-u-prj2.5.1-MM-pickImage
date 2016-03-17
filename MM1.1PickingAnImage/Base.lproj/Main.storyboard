@@ -290,12 +290,34 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pyq-BT-fkt" userLabel="Image Picker View">
                                         <rect key="frame" x="0.0" y="8" width="600" height="496"/>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-BE-5bM" userLabel="Top">
+                                        <rect key="frame" x="8" y="36" width="584" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="Xxn-lg-dLV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lz6-xK-ylp" userLabel="Bottom">
+                                        <rect key="frame" x="8" y="422" width="584" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="c8j-wo-bQr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.37647058820000001" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Pyq-BT-fkt" secondAttribute="trailing" id="62A-Sf-GNj"/>
                                     <constraint firstItem="Pyq-BT-fkt" firstAttribute="top" secondItem="kI4-Sx-3f3" secondAttribute="top" constant="8" id="8Uu-Df-cPl"/>
                                     <constraint firstAttribute="bottom" secondItem="Pyq-BT-fkt" secondAttribute="bottom" constant="8" id="BAS-DW-zU3"/>
+                                    <constraint firstItem="QIR-BE-5bM" firstAttribute="leading" secondItem="kI4-Sx-3f3" secondAttribute="leading" constant="8" id="Cb8-Hl-GgM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lz6-xK-ylp" secondAttribute="trailing" constant="8" id="HWT-UG-aL5"/>
+                                    <constraint firstItem="QIR-BE-5bM" firstAttribute="top" secondItem="kI4-Sx-3f3" secondAttribute="top" constant="36" id="elS-BK-xne"/>
+                                    <constraint firstAttribute="trailing" secondItem="QIR-BE-5bM" secondAttribute="trailing" constant="8" id="oJ4-Lo-cpe"/>
+                                    <constraint firstItem="Lz6-xK-ylp" firstAttribute="leading" secondItem="kI4-Sx-3f3" secondAttribute="leading" constant="8" id="pa1-qM-kER"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lz6-xK-ylp" secondAttribute="bottom" constant="36" id="tVs-l4-i1j"/>
                                     <constraint firstItem="Pyq-BT-fkt" firstAttribute="leading" secondItem="kI4-Sx-3f3" secondAttribute="leading" id="zVF-eU-mtR"/>
                                 </constraints>
                             </view>
@@ -316,9 +338,11 @@
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="9ib-nV-32B" id="9eQ-xf-5wN"/>
+                        <outlet property="bottomTextfield" destination="Lz6-xK-ylp" id="Y0W-R9-e1m"/>
                         <outlet property="bottomToolBar" destination="KiK-xj-YE0" id="8oV-ZC-nk8"/>
                         <outlet property="cameraButton" destination="gcY-bk-Igb" id="ASB-BR-7YI"/>
                         <outlet property="imagePickerView" destination="Pyq-BT-fkt" id="BrP-7e-HQG"/>
+                        <outlet property="topTextField" destination="QIR-BE-5bM" id="uCr-3F-gse"/>
                         <outlet property="topToolBar" destination="XUI-3D-nko" id="aP7-Vo-7Zp"/>
                     </connections>
                 </viewController>

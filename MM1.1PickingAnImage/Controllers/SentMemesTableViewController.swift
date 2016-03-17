@@ -91,6 +91,7 @@ class SentMemesTableViewController: UITableViewController, UITextFieldDelegate {
         detailVC.meme = meme
         detailVC.memeIndex = indexPath.row
         
+//        self.presentViewController(detailVC, animated: true, completion: nil)
         self.navigationController!.pushViewController(detailVC, animated: true)
     }
     
