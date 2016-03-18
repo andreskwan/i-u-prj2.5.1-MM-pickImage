@@ -17,6 +17,7 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
+    @IBOutlet weak var subView: UIView!
     
     var keyBoardHeight: CGFloat!
     var shouldHideBars: Bool!
@@ -183,8 +184,10 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     func generateMemedImage() {
         hideBars(true)
-        let backgroundColor = view.backgroundColor
+        let viewBackgroundColor = view.backgroundColor
+        let subViewBackgroundColor = subView.backgroundColor
         view.backgroundColor = UIColor.clearColor()
+        subView.backgroundColor = UIColor.clearColor()
         let frameSize = self.view.frame.size
         UIGraphicsBeginImageContext(frameSize)
         self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
@@ -193,7 +196,8 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         let nsdata = UIImagePNGRepresentation(memedImage)
         memedImage = UIImage.init(data: nsdata!)
         hideBars(false)
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = viewBackgroundColor
+        subView.backgroundColor = subViewBackgroundColor
     }
     func hideBars(shouldHideBars:Bool)
     {

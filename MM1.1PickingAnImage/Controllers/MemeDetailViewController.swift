@@ -13,13 +13,18 @@ class MemeDetailViewController: UIViewController {
     var memeIndex: Int?
     
     @IBOutlet weak var memeImage: UIImageView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
+//    @IBOutlet weak var editButton: UIBarButtonItem!
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
         super.viewWillAppear(true)
+    }
+    
+    override func viewDidLoad() {
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "showMemeEditor")
         memeImage.image = meme?.memedImage
-        navigationItem.rightBarButtonItem = editButton
+        navigationItem.rightBarButtonItem = editButton        
+        super.viewDidLoad()
     }
 
 //    @IBAction func cancelbutton(sender: AnyObject) {
@@ -32,7 +37,7 @@ class MemeDetailViewController: UIViewController {
     }
     
     // MARK: IBActions
-    @IBAction func showMemeEditor(sender: AnyObject) {
+    func showMemeEditor(sender: AnyObject) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let editorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         editorVC.meme = meme

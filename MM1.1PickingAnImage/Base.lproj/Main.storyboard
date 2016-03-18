@@ -103,40 +103,16 @@
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <navigationBar clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMZ-Aq-dTa">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="XvZ-ep-irM"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem id="tUX-Cf-dki">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="6hA-ce-4jJ">
-                                            <connections>
-                                                <action selector="cancelbutton:" destination="tas-Xb-49f" id="PVV-Cf-vfN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="kfL-r8-lPI">
-                                            <connections>
-                                                <action selector="showMemeEditor:" destination="tas-Xb-49f" id="NeU-ZK-CIE"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lMZ-Aq-dTa" firstAttribute="leading" secondItem="UH9-n7-hjE" secondAttribute="leadingMargin" constant="-20" id="I0A-qA-Vuz"/>
-                            <constraint firstItem="lMZ-Aq-dTa" firstAttribute="leading" secondItem="wyT-wh-l3x" secondAttribute="leading" id="LxA-rD-AhK"/>
-                            <constraint firstItem="wyT-wh-l3x" firstAttribute="bottom" secondItem="7v4-at-i2u" secondAttribute="top" id="VIp-Lb-I7B"/>
-                            <constraint firstItem="lMZ-Aq-dTa" firstAttribute="top" secondItem="UH9-n7-hjE" secondAttribute="top" id="a1e-5F-cbU"/>
-                            <constraint firstItem="lMZ-Aq-dTa" firstAttribute="trailing" secondItem="wyT-wh-l3x" secondAttribute="trailing" id="gi8-XY-XQR"/>
-                            <constraint firstItem="wyT-wh-l3x" firstAttribute="top" secondItem="lMZ-Aq-dTa" secondAttribute="bottom" id="iEr-aT-uq6"/>
-                            <constraint firstItem="lMZ-Aq-dTa" firstAttribute="centerX" secondItem="UH9-n7-hjE" secondAttribute="centerX" id="iev-Ua-9Vs"/>
+                            <constraint firstItem="wyT-wh-l3x" firstAttribute="leading" secondItem="UH9-n7-hjE" secondAttribute="leading" id="1CE-TH-HSI"/>
+                            <constraint firstItem="wyT-wh-l3x" firstAttribute="bottom" secondItem="7v4-at-i2u" secondAttribute="top" id="Ail-hD-ebN"/>
+                            <constraint firstAttribute="trailing" secondItem="wyT-wh-l3x" secondAttribute="trailing" id="C03-Fh-9wj"/>
+                            <constraint firstItem="wyT-wh-l3x" firstAttribute="top" secondItem="sWn-Xz-FiH" secondAttribute="bottom" constant="24" id="SiN-yu-Xw5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="editButton" destination="kfL-r8-lPI" id="9np-x6-ced"/>
                         <outlet property="memeImage" destination="wyT-wh-l3x" id="Ygw-TF-0bg"/>
                     </connections>
                 </viewController>
@@ -342,6 +318,7 @@
                         <outlet property="bottomToolBar" destination="KiK-xj-YE0" id="8oV-ZC-nk8"/>
                         <outlet property="cameraButton" destination="gcY-bk-Igb" id="ASB-BR-7YI"/>
                         <outlet property="imagePickerView" destination="Pyq-BT-fkt" id="BrP-7e-HQG"/>
+                        <outlet property="subView" destination="kI4-Sx-3f3" id="k8u-f0-ZRK"/>
                         <outlet property="topTextField" destination="QIR-BE-5bM" id="uCr-3F-gse"/>
                         <outlet property="topToolBar" destination="XUI-3D-nko" id="aP7-Vo-7Zp"/>
                     </connections>
