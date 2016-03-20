@@ -99,17 +99,29 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-wh-l3x">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Zl-Da-wQ0" userLabel="SubView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-wh-l3x">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wyT-wh-l3x" firstAttribute="top" secondItem="6Zl-Da-wQ0" secondAttribute="top" id="8dW-Y6-CEG"/>
+                                    <constraint firstAttribute="bottom" secondItem="wyT-wh-l3x" secondAttribute="bottom" id="D0b-sN-ZYJ"/>
+                                    <constraint firstItem="wyT-wh-l3x" firstAttribute="leading" secondItem="6Zl-Da-wQ0" secondAttribute="leading" id="lFd-X1-NRa"/>
+                                    <constraint firstAttribute="trailing" secondItem="wyT-wh-l3x" secondAttribute="trailing" id="vdK-eW-upJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7v4-at-i2u" firstAttribute="top" secondItem="wyT-wh-l3x" secondAttribute="bottom" id="GME-p8-MA4"/>
-                            <constraint firstItem="wyT-wh-l3x" firstAttribute="top" secondItem="sWn-Xz-FiH" secondAttribute="bottom" id="Yhc-HW-xi1"/>
-                            <constraint firstItem="wyT-wh-l3x" firstAttribute="leading" secondItem="UH9-n7-hjE" secondAttribute="leadingMargin" constant="-20" id="l2b-vy-HqC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wyT-wh-l3x" secondAttribute="trailing" constant="-20" id="sQA-BW-Yob"/>
+                            <constraint firstItem="6Zl-Da-wQ0" firstAttribute="top" secondItem="sWn-Xz-FiH" secondAttribute="bottom" id="5Lx-IB-CEG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Zl-Da-wQ0" secondAttribute="trailing" constant="-20" id="CbD-Jv-V5T"/>
+                            <constraint firstItem="7v4-at-i2u" firstAttribute="top" secondItem="6Zl-Da-wQ0" secondAttribute="bottom" id="Iyj-M2-RrC"/>
+                            <constraint firstItem="6Zl-Da-wQ0" firstAttribute="leading" secondItem="UH9-n7-hjE" secondAttribute="leadingMargin" constant="-20" id="XKp-Pw-qge"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

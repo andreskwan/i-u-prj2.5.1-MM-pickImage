@@ -188,9 +188,9 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         let subViewBackgroundColor = subView.backgroundColor
         view.backgroundColor = UIColor.clearColor()
         subView.backgroundColor = UIColor.clearColor()
-        let frameSize = self.view.frame.size
-        UIGraphicsBeginImageContext(frameSize)
-        self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let subviewFrameSize = self.subView.frame.size
+        UIGraphicsBeginImageContext(subviewFrameSize)
+        self.subView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         let nsdata = UIImagePNGRepresentation(memedImage)
