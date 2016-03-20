@@ -13,7 +13,6 @@ class MemeDetailViewController: UIViewController {
     var memeIndex: Int?
     
     @IBOutlet weak var memeImage: UIImageView!
-//    @IBOutlet weak var editButton: UIBarButtonItem!
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
@@ -26,10 +25,6 @@ class MemeDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButton        
         super.viewDidLoad()
     }
-
-//    @IBAction func cancelbutton(sender: AnyObject) {
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
     
     override func viewWillDisappear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
@@ -37,7 +32,7 @@ class MemeDetailViewController: UIViewController {
     }
     
     // MARK: IBActions
-    func showMemeEditor(sender: AnyObject) {
+    func showMemeEditor() {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let editorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         editorVC.meme = meme
@@ -48,5 +43,4 @@ class MemeDetailViewController: UIViewController {
         //when EditorVC-cancel buttom is tapped the top VC in the navigationController is presented
         navigationController!.popViewControllerAnimated(true)
     }
-
 }
