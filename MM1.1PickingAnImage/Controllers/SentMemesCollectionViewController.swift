@@ -36,7 +36,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UITextField
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let memeEditorVC = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! EditorViewController
         //TODO: present modally or Master-Detail?
-        self.presentViewController(memeEditorVC, animated: true, completion: nil)
+        presentViewController(memeEditorVC, animated: true, completion: nil)
     }
     
     // MARK: CollectionView - DataSource Methods
@@ -67,13 +67,13 @@ class SentMemesCollectionViewController: UICollectionViewController, UITextField
     
     // MARK: CollectionView - Delegate Methods
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let detailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         let meme = memes[indexPath.item]
 
         detailVC.meme = meme 
         detailVC.memeIndex = indexPath.row
         
-        self.navigationController!.pushViewController(detailVC, animated: true)
+        navigationController!.pushViewController(detailVC, animated: true)
         
     }
 

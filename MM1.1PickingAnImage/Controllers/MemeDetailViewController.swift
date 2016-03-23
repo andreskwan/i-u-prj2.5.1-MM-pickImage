@@ -15,7 +15,7 @@ class MemeDetailViewController: UIViewController {
     @IBOutlet weak var memeImage: UIImageView!
     
     override func viewWillAppear(animated: Bool) {
-        self.tabBarController?.tabBar.hidden = true
+        tabBarController?.tabBar.hidden = true
         super.viewWillAppear(true)
     }
     
@@ -27,7 +27,7 @@ class MemeDetailViewController: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        self.tabBarController?.tabBar.hidden = false
+        tabBarController?.tabBar.hidden = false
         super.viewWillDisappear(true)
     }
     
@@ -38,7 +38,7 @@ class MemeDetailViewController: UIViewController {
         editorVC.meme = meme
         editorVC.memeIndex = memeIndex
         //To present editorVC
-        self.presentViewController(editorVC, animated: true, completion: nil)
+        presentViewController(editorVC, animated: true, completion: nil)
         //To remove itself from the navigationController stack
         //when EditorVC-cancel buttom is tapped the top VC in the navigationController is presented
         navigationController!.popViewControllerAnimated(true)
