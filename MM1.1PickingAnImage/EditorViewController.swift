@@ -81,8 +81,10 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         generateMemedImage()
         let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityVC.completionWithItemsHandler = { (activity, success, items, error) in
-            self.save()
-            self.dismissViewControllerAnimated(true, completion: nil)
+            if(success){
+                self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
         presentViewController(activityVC, animated: true, completion: nil)
     }
