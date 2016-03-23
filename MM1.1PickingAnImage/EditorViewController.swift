@@ -50,45 +50,29 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
         return true
     }
     func initializeMeme(){
-        var allowSave: Bool?
+        var isAllowedToSaveMeme: Bool?
         // edit a meme
-        if let _ = meme {
-            topTextField.text = meme.topText! as String
-            bottomTextfield.text = meme.bottomText! as String
+        if let _ = meme {//Edit meme
+            configureTextfield(topTextField, text: meme.topText! as String)
+            configureTextfield(bottomTextfield, text: meme.bottomText! as String)
             imagePickerView.image = meme.image
-            allowSave = true
+            isAllowedToSaveMeme = true
         } else { //Create new meme
-            topTextField.text = "TOP"
-            bottomTextfield.text = "BOTTOM"
+            configureTextfield(topTextField, text: "TOP")
+            configureTextfield(bottomTextfield, text: "BOTTOM")
             imagePickerView.image = nil
-            allowSave = false
+            isAllowedToSaveMeme = false
         }
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        topTextField.textAlignment = NSTextAlignment.Center
-        topTextField.delegate = self
-        bottomTextfield.defaultTextAttributes = memeTextAttributes
-        bottomTextfield.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        bottomTextfield.textAlignment = NSTextAlignment.Center
-        bottomTextfield.delegate = self
         // allow to save/share edited meme
-        actionButton.enabled = allowSave!
+        actionButton.enabled = isAllowedToSaveMeme!
     }
     
     // MARK: IBActions
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-        initializeMeme()
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+        presentImagePickerControllerWithSourceType(UIImagePickerControllerSourceType.PhotoLibrary)
     }
     @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
-        initializeMeme()
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        presentImagePickerControllerWithSourceType(UIImagePickerControllerSourceType.Camera)
     }
     @IBAction func cancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -203,5 +187,22 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
     {
         topToolBar.hidden = shouldHideBars
         bottomToolBar.hidden = shouldHideBars
+    }
+
+    // MARK: Helpers
+    func configureTextfield(textField: UITextField, text:String) {
+        textField.text = text as String
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        textField.textAlignment = NSTextAlignment.Center
+        textField.delegate = self
+    }
+    
+    func presentImagePickerControllerWithSourceType(pickerSourceType:UIImagePickerControllerSourceType) {
+        initializeMeme()
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = pickerSourceType
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
 }
