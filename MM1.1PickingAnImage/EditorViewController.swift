@@ -86,6 +86,12 @@ class EditorViewController: UIViewController, UIImagePickerControllerDelegate, U
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
+//            activityVC.popoverPresentationController?.barButtonItem = actionButton
+                let rect = CGRect(x: 50, y: 50, width: 150, height: 150)
+                activityVC.popoverPresentationController?.sourceRect = rect
+                activityVC.popoverPresentationController?.sourceView = view
+        }
         presentViewController(activityVC, animated: true, completion: nil)
     }
     
